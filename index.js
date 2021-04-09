@@ -15,6 +15,7 @@ app.use(
 );
 
 app.get("/", (request, response) => {
+  console.log('hit')
   response.json({ info: "Node.js, Express and Postgres API" });
 });
 

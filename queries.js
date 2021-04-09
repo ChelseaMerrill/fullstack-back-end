@@ -10,7 +10,9 @@ const pool = new Pool({
 });
 
 const getSongs = (request, response) => {
+  console.log('getting songs')
   pool.query("SELECT * FROM songs", (error, results) => {
+    
     if (error) {
       throw error;
     }
