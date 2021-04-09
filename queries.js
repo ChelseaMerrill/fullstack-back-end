@@ -2,9 +2,10 @@ const Pool = require("pg").Pool;
 
 const pool = new Pool({
   user: "postgres",
-  host: "localhost",
+  // host: "localhost",
+  host: "music.caemfhowmnku.us-east-2.rds.amazonaws.com",
   database: "music",
-  password: "",
+  password: "postgres",
   port: 5432,
 });
 
@@ -13,7 +14,6 @@ const getSongs = (request, response) => {
     if (error) {
       throw error;
     }
-    console.log(response);
     response.status(200).json(results.rows);
   });
 };
